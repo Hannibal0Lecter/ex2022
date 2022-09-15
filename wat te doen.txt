@@ -32,3 +32,37 @@ uitgifters - id int PK NOT NULL AUTO, medewerkerid int NOT NULL fk naar medewerk
 na inloggenword er een menu getoond met de opties Inname, Verwerking, Uitgifte, Rapportage en Onderhoud
 
 
+
+klant levert apparaat in krijgt geld en bon(inname). registeerd apparaat en bergt het op drukt bon uit en betaald klant(medewerker inname)
+
+medewerker demontage demonteerd apparaten registeerd onderdelen en begt onderdelen op (verwerking)
+
+Medewerker uitgifte registreed opbrengst(onderhoud uitgifte) includes onderhoud administrator. verzamelt onderdelen(uitgifte) verneemt opbrengst verstuurd onderdelen deelt opbrengst mede (verkoop)
+
+administrator voert onderhoud uit(onderhoud)
+)
+beleidsmedewerker van de gemeente vraagt informatie op interpreteert informatie (Rapportage)
+
+-----------------------------------------------
+mensen
+inwoner gemeente(klant)
+medewerker inname
+
+medewerkerdemontage
+
+medewerkeruitgifte
+opkoper van onderdelen
+administrator
+
+beleidsmedewerker van de gemeente
+---------------------------------------------------
+
+navigatie
+
+inname -> bonafdrukken
+verwerking -> onderdelen verwerken en afdrukken ingenomen apparaten
+uitgifte ->vrachtbrief
+raportage -> rendement-afdrukken verkoop-afdrukken medewerkervoorraad-afdrukken inkoop-afdrukken
+Onderhoud -> uitgiftes-bewerken-afdrukken innames-bewerken-afdrukken onderdelen-bewerken-afdrukken apparaten-samenstellen-afdrukken-bewerken
+
+website moet groen zijn achtergrond wit lettertype Arial Rounded MT Bold sandaardkleuren van letters zijn Darkgreen accentkleueren zijn forestgreen en green
