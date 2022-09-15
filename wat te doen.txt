@@ -1,0 +1,34 @@
+Inname = klant levert 1 of meerdere producten in krijgt daarvoor een bon je moet kunnen zien welke mederwerker het heeft ingenomen
+
+verwerking = hier worden de producten uit elkaar gehaald en opgeslagen in database om later verkocht te worden
+
+uitgifte = producten die zijn opgeslagen worden verkocht
+
+Rapoortage = overzicht van ingenomen apparaten per tijdvak(inkoop), overzicht van nog niet gedemonteerde apparaten(werkvoorraad), overzicht van verkochte onderdelen per tijdvak(verkoop), 
+onderoud van de inkoop van apparaten afgezet tegen de verkoop van alle onderdelen per apparaat(rendament).
+
+
+
+database
+
+apparaten - id int notnull PK auto, naam a40 NOT NULL naam apparaat, omschrijving a200, vergoeding cur NOT NULL, gewichtgram int
+
+onderdeelapparaat - id int NOT NULL PK AUTO, onderdeel onderdeelID int NOT NULL FK naar onderdelen id, apparaatID int NOT NULL FK vaan apparaten id, percentage int
+
+onderdelen - id int NOT NULL PK AUTO, naam A40 NOT NULL naam van onderdeel(uniek), omschrijving a200, voorraadkg int NOT NULL actuele voorraad van het onderdeel, prijsperkg cur NOT NULL standaardverkoopprijs
+
+innameapperaten - id INT NOT NULL PK AUTO, inname INT NOT NULL FK naar innames id, apparaatid INT NOT NULL FK naar apparatenid, ontleed BOOLEAN NOT NULL indicatie of apparaat al is verwerkt default = false/null
+
+Innames - ID INT NOT NULL PK AUTO, medewerkerid INT NOT NULL FK naar medewerkersid, tijdstip DT NOT NULL datum/tijd van inname default current timestamp
+
+medewerkers - id int NOT NULL PK AUTO, rolid INT NOT NULL FK rollenid, naam a40 NOT NULL, wachtwoord a40 NOT NULL encrypted ww volgens SHA256, email a100 NOT NULL
+
+rollen - id int NOT NULL PK AUTO, naam a40NOT NULL naam ban rol, omschrijving a200, waarde int NOT NULL integer respresentatie van het authorisatie-bitpatroon
+
+uitgifters - id int PK NOT NULL AUTO, medewerkerid int NOT NULL fk naar medewerkersid, onderdeelID int NOT NULL FK naar onderdelenID, tijdstip dt NOT NULL datum/tijd van inname default current timestamp, gewichtkg int NOT NULL, prijs cur.
+
+
+
+na inloggenword er een menu getoond met de opties Inname, Verwerking, Uitgifte, Rapportage en Onderhoud
+
+
